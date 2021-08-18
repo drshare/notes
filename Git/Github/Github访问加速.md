@@ -1,0 +1,2 @@
+- 主站: [github.com/ineo6/hosts](https://github.com/ineo6/hosts)
+- 镜像地址: [gitee.com/ineo6/hosts](https://gitee.com/ineo6/hosts)
