@@ -1,16 +1,3 @@
-import { useData, useRoute, useRouter } from 'vitepress';
-
-// 获取注入数据
-export function getPageData() {
-    const { site, frontmatter, theme, page } = useData();
-    const route = useRoute();
-    return { 
-        site,
-        page,
-        theme,
-        route,
-    }    
-}
 export const hashRE = /#.*$/;
 export const extRE = /(index)?\.(md|html)$/;
 export const endingSlashRE = /\/$/;

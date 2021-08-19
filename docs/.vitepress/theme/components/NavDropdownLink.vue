@@ -1,25 +1,29 @@
-<script setup>
-import { defineProps, ref, watch } from 'vue'
+<script setup lang="ts">
+import { ref, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import type { DefaultTheme } from '../config'
 import NavDropdownLinkItem from './NavDropdownLinkItem.vue'
-const props = defineProps({
-    item: Object
-})
+
+defineProps<{
+  item: DefaultTheme.NavItemWithChildren
+}>()
+
 const route = useRoute()
 
 const open = ref(false)
 
 watch(
-    () => route.path,
-    () => {
-        open.value = false
-    }
+  () => route.path,
+  () => {
+    open.value = false
+  }
 )
 
 function toggle() {
-    open.value = !open.value
+  open.value = !open.value
 }
 </script>
+
 <template>
   <div class="nav-dropdown-link" :class="{ open }">
     <button class="button" :aria-label="item.ariaLabel" @click="toggle">

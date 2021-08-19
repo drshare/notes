@@ -1,26 +1,33 @@
-<script setup>
-import { defineEmits } from 'vue'
+<script setup lang="ts">
 import NavBarTitle from './NavBarTitle.vue'
 import NavLinks from './NavLinks.vue'
 import ToggleSideBarButton from './ToggleSideBarButton.vue'
 
-const emit = defineEmits(['toggle'])
+defineEmits(['toggle'])
 </script>
 
 <template>
   <header class="nav-bar">
     <ToggleSideBarButton @toggle="$emit('toggle')" />
+
     <NavBarTitle />
+
     <div class="flex-grow" />
+
     <div class="nav">
-        <NavLinks />
+      <NavLinks />
     </div>
+
     <slot name="search" />
   </header>
 </template>
 
 <style scoped>
 .nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: var(--z-index-navbar);
   display: flex;
   justify-content: space-between;

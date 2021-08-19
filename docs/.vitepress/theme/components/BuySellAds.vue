@@ -1,13 +1,30 @@
-<script setup>
-import { defineProps, onMounted } from 'vue'
+<script setup lang="ts">
+import { onMounted } from 'vue'
 
 // global _bsa
 const ID = 'bsa-cpc-script'
 
-const { code, placement } = defineProps({
-    code: String,
-    placement: String,
-})
+declare global {
+  var _bsa: BSA | undefined
+
+  interface BSA {
+    init(
+      name: string,
+      code: string,
+      placement: string,
+      options: {
+        target: string
+        align: string
+        disable_css?: 'true' | 'false'
+      }
+    ): void
+  }
+}
+
+const { code, placement } = defineProps<{
+  code: string
+  placement: string
+}>()
 
 onMounted(() => {
   if (!document.getElementById(ID)) {

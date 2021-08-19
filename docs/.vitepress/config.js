@@ -1,7 +1,7 @@
 module.exports = {
+    base: '/',
     title: '笔记本',
     description: '描述',
-    base: '/',
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
@@ -16,7 +16,26 @@ module.exports = {
         logo: '/public/logo.png',
         nav: [
             { text: '首页', link: '/' },
-            { text: '前端', link: '/guide/FrontEnd/' },
+            { 
+                text: '前端', 
+                link: '/guide/FrontEnd/',
+                items: [
+                    { text: 'HTML', link: '/guide/FrontEnd/HTML/' },
+                    { text: 'CSS', link: '/guide/FrontEnd/CSS/' },
+                    { text: 'JS', link: '/guide/FrontEnd/JavaScript/' },
+                    { text: 'TS', link: '/guide/FrontEnd/TypeScript/' },
+                ]
+            },
+            { 
+                text: '前端框架', 
+                link: '/guide/FrontEnd/',
+                items: [
+                    { text: 'Vue', link: '/guide/FrontEnd/Vue/' },
+                    { text: 'React', link: '/guide/FrontEnd/React/' },
+                    { text: 'Nuxt', link: '/guide/FrontEnd/Nuxt/' },
+                    { text: 'QianKun', link: '/guide/FrontEnd/QianKun/' },
+                ]
+            },
             { text: '后端', link: '/guide/BackEnd/' },
             { text: 'Git', link: '/guide/Git/' },
             { text: '编程方式', link: '/guide/Programming Paradigm/' },

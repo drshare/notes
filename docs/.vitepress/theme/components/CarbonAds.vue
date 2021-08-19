@@ -1,10 +1,11 @@
-<script setup>
-import { defineProps, ref, onMounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
 
-const { code, placement } = defineProps({
-    code: String,
-    placement: String,
-})
+const { code, placement } = defineProps<{
+  code: string
+  placement: string
+}>()
+
 const el = ref()
 
 onMounted(() => {

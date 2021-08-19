@@ -1,13 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import '@docsearch/css'
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter, useData } from 'vitepress'
-import { defineProps, getCurrentInstance, onMounted, watch } from 'vue'
+import { getCurrentInstance, onMounted, watch } from 'vue'
+import type { DefaultTheme } from '../config'
+import type { DocSearchHit } from '@docsearch/react/dist/esm/types'
 
-const props = defineProps({
-    options: Object,
-    multilang: Boolean,
-})
+const props = defineProps<{
+  options: DefaultTheme.AlgoliaSearchOptions
+  multilang?: boolean
+}>()
 
 const vm = getCurrentInstance()
 const route = useRoute()
@@ -24,7 +26,7 @@ onMounted(() => {
   initialize(props.options)
 })
 
-function isSpecialClick(event) {
+function isSpecialClick(event: MouseEvent) {
   return (
     event.button === 1 ||
     event.altKey ||
@@ -34,13 +36,13 @@ function isSpecialClick(event) {
   )
 }
 
-function getRelativePath(absoluteUrl) {
+function getRelativePath(absoluteUrl: string) {
   const { pathname, hash } = new URL(absoluteUrl)
 
   return pathname + hash
 }
 
-function update(options) {
+function update(options: any) {
   if (vm && vm.vnode.el) {
     vm.vnode.el.innerHTML =
       '<div class="algolia-search-box" id="docsearch"></div>'
@@ -50,7 +52,7 @@ function update(options) {
 
 const { lang } = useData()
 
-function initialize(userOptions) {
+function initialize(userOptions: any) {
   // if the user has multiple locales, the search results should be filtered
   // based on the language
   const facetFilters = props.multilang ? ['language:' + lang.value] : []
@@ -68,7 +70,7 @@ function initialize(userOptions) {
       }),
 
       navigator: {
-        navigate: ({ suggestionUrl }) => {
+        navigate: ({ suggestionUrl }: { suggestionUrl: string }) => {
           const { pathname: hitPathname } = new URL(
             window.location.origin + suggestionUrl
           )
@@ -83,7 +85,7 @@ function initialize(userOptions) {
         }
       },
 
-      transformItems: (items) => {
+      transformItems: (items: DocSearchHit[]) => {
         return items.map((item) => {
           return Object.assign({}, item, {
             url: getRelativePath(item.url)
@@ -94,9 +96,12 @@ function initialize(userOptions) {
       hitComponent: ({
         hit,
         children
+      }: {
+        hit: DocSearchHit
+        children: any
       }) => {
         const relativeHit = hit.url.startsWith('http')
-          ? getRelativePath(hit.url)
+          ? getRelativePath(hit.url as string)
           : hit.url
 
         return {
@@ -106,7 +111,7 @@ function initialize(userOptions) {
           key: undefined,
           props: {
             href: hit.url,
-            onClick: (event) => {
+            onClick: (event: MouseEvent) => {
               if (isSpecialClick(event)) {
                 return
               }

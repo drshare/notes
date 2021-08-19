@@ -1,26 +1,26 @@
-<script setup>
-import { ref, computed, watch, defineAsyncComponent } from 'vue';
-import { useRoute, useData } from 'vitepress';
-import { isSideBarEmpty, getSideBarConfig } from '../support/sideBar.js';
+<script setup lang="ts">
+import { ref, computed, watch, defineAsyncComponent } from 'vue'
+import { useRoute, useData } from 'vitepress'
+import { isSideBarEmpty, getSideBarConfig } from './support/sideBar'
 
 // components
-import SideBar from '../components/SideBar.vue';
-import Page from '../components/Page.vue';
-import NavBar from '../components/Navbar.vue';
+import NavBar from './components/NavBar.vue'
+import SideBar from './components/SideBar.vue'
+import Page from './components/Page.vue'
 
-const Home = defineAsyncComponent(() => import('../components/Home.vue'));
+const Home = defineAsyncComponent(() => import('./components/Home.vue'))
 
-const NoopComponent = () => null;
+const NoopComponent = () => null
 
 const CarbonAds = __CARBON__
-  ? defineAsyncComponent(() => import('../components/CarbonAds.vue'))
-  : NoopComponent;
+  ? defineAsyncComponent(() => import('./components/CarbonAds.vue'))
+  : NoopComponent
 const BuySellAds = __BSA__
-  ? defineAsyncComponent(() => import('../components/BuySellAds.vue'))
-  : NoopComponent;
+  ? defineAsyncComponent(() => import('./components/BuySellAds.vue'))
+  : NoopComponent
 const AlgoliaSearchBox = __ALGOLIA__
-  ? defineAsyncComponent(() => import('../components/AlgoliaSearchBox.vue'))
-  : NoopComponent;
+  ? defineAsyncComponent(() => import('./components/AlgoliaSearchBox.vue'))
+  : NoopComponent
 
 // generic state
 const route = useRoute()
@@ -60,7 +60,7 @@ const showSidebar = computed(() => {
   )
 })
 
-const toggleSidebar = (to) => {
+const toggleSidebar = (to?: boolean) => {
   openSideBar.value = typeof to === 'boolean' ? to : !openSideBar.value
 }
 
