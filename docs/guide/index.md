@@ -1,6 +1,4 @@
 ## 我的笔记本
-[前端](./FontEnd)
-[后端](./BackEnd)
 
 1、Neumorphism 地址：https://neumorphism.io/
 2、带有渐变的图标 地址：https://www.iconshock.com/svg-icons/

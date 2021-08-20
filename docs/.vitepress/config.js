@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/',
+    base: '/notes',
     title: '笔记本',
     description: '描述',
     head: [
