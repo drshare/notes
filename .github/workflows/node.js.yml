@@ -21,7 +21,15 @@ jobs:
         node-version: "14"
 
     - name: Install dependencies
-      run: npm install
+      run: yarn
 
     - name: Build Website
-      run: npm run deploy
+      run: yarn build
+
+    - name: Deploy Website
+      uses: crazy-max/ghaction-github-pages@v2
+      env: 
+        GITHUB_TOKEN: ${{ secrets.NOTES }}
+      with: 
+        target_branch: gh-pages
+        build_dir: docs/.vitepress/dist
