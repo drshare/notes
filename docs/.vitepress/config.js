@@ -46,15 +46,9 @@ module.exports = {
             { text: '后端', link: '/guide/BackEnd/' },
             { text: 'Git', link: '/guide/Git/' },
             { text: '编程方式', link: '/guide/Programming Paradigm/' },
-            { text: '关于', link: '/guide/about/' },
+            { text: '关于', link: '/guide/About/' },
         ],
-        sidebar: [
-            { text: 'mine', link: '/mine' },
-        ]
     },
-    plugins: [
-        ['@vuepress/search', { searchMaxSuggestions: 10 }]
-    ],
     markdow: {
         toc: {
             includeLevel: [2, 3]
