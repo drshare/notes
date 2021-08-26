@@ -5,8 +5,6 @@ module.exports = {
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
-    host: '0.0.0.0',
-    port: 9527,
     themeConfig: {
         search: true,
         searchMaxSuggestions: 10,
@@ -31,6 +29,18 @@ module.exports = {
                     { text: 'React', link: '/guide/FrontEnd/React/' },
                     { text: 'Nuxt', link: '/guide/FrontEnd/Nuxt/' },
                     { text: 'QianKun', link: '/guide/FrontEnd/QianKun/' },
+                    { text: 'Webpack', link: '/guide/FrontEnd/Webpack/' },
+                    { text: 'QianKun', link: '/guide/FrontEnd/QianKun/' },
+                ]
+            },
+            { 
+                text: 'NODEJS', 
+                link: '/guide/NodeJS/',
+                items: [
+                    { text: '包管理', link: '/guide/NodeJS/package/' },
+                    { text: 'CLI', link: '/guide/NodeJS/CLI/' },
+                    { text: 'Nuxt', link: '/guide/NodeJS/Nuxt/' },
+                    { text: 'QianKun', link: '/guide/NodeJS/QianKun/' },
                 ]
             },
             { text: '后端', link: '/guide/BackEnd/' },
@@ -39,14 +49,6 @@ module.exports = {
             { text: '关于', link: '/guide/about/' },
         ],
         sidebar: [
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
-            { text: 'mine', link: '/mine' },
             { text: 'mine', link: '/mine' },
         ]
     },
