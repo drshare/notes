@@ -8,7 +8,7 @@ module.exports = {
     host: '0.0.0.0',
     port: 9527,
     head: [
-        ['link', { rel: 'icon', href: '/img/icon.png'}]
+        ['link', { rel: 'icon', href: '/icon.png'}]
     ],
     themeConfig: {
         search: true,
