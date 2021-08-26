@@ -7,13 +7,10 @@ module.exports = {
     ],
     host: '0.0.0.0',
     port: 9527,
-    head: [
-        ['link', { rel: 'icon', href: '/icon.png'}]
-    ],
     themeConfig: {
         search: true,
         searchMaxSuggestions: 10,
-        logo: '/public/logo.png',
+        logo: '/logo.png',
         nav: [
             { text: '首页', link: '/' },
             { 
