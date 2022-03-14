@@ -4,16 +4,20 @@ name: giteeSync
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   repo-sync:
+  
     env:
       dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
       dst_token: ${{ secrets.GITEE_TOKEN }}
       gitee_user: ${{ secrets.GITEE_USER }}
+
     runs-on: ubuntu-latest
-   steps:
+
+    steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
