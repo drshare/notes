@@ -819,6 +819,11 @@ markdown-it-container@^3.0.0:
   resolved "https://registry.npm.taobao.org/markdown-it-container/download/markdown-it-container-3.0.0.tgz#1d19b06040a020f9a827577bb7dbf67aa5de9a5b"
   integrity sha1-HRmwYECgIPmoJ1d7t9v2eqXemls=
 
+markdown-it-disable-url-encode@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/markdown-it-disable-url-encode/-/markdown-it-disable-url-encode-1.0.1.tgz#ecd653703bd824bdfabcf18f2ff0ad6d5b168bd1"
+  integrity sha512-M/0GhhOzQcS8d2aFXF5SBSPjEmvfovkCgmVgZUm2B9nStEAVCb8bCfYVPaHNfem6M0TrBcdruF/PH1hKxwPIUw==
+
 markdown-it-emoji@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/markdown-it-emoji/download/markdown-it-emoji-2.0.0.tgz#3164ad4c009efd946e98274f7562ad611089a231"

@@ -2,10 +2,18 @@ module.exports = {
     base: '/notes',
     title: '笔记本',
     description: '描述',
+    lang: 'zh-CN',
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
     themeConfig: {
+        repo: 'drshare/notes',
+        repoLabel:'GitHub',
+        docsDir: 'docs',
+        docsBranch: 'master',
+        editLinks: true,
+        editLinkText: '欢迎帮助我们改善页面!',
+        lastUpdated: '最近更新时间',
         search: true,
         searchMaxSuggestions: 10,
         logo: '/logo.png',
