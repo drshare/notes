@@ -3,6 +3,7 @@ module.exports = {
     title: '笔记本',
     description: '描述',
     lang: 'zh-CN',
+    outDir: '../dist',
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]
     ],
