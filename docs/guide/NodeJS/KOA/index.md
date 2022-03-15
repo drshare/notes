@@ -1,1 +1,1 @@
-[object Object]
+[0.KOA基础](./0.KOA基础.md)

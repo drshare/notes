@@ -136,7 +136,7 @@ function writeCatalogue(target, level = 1, currentLevel = 1) {
     if (!catalogueArr.length || currentLevel < level) return [];
     if (level === currentLevel) {
         catalogueStr = catalogueArr.map(item => {
-            if (typeof item === 'object' && item.deepLevel) {
+            if (typeof item === 'object') {
                 const nameStart = item.deepLevel > 0 ?  '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(item.deepLevel) : '';
                 return `${nameStart}[${item.name}](${item.path})`
             }
