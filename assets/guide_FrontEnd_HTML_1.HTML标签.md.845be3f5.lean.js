@@ -1,0 +1,1 @@
+import{_ as n,c as a,o as s,d as t}from"./app.a0f52c8e.js";const h='{"title":"HTML \u6807\u7B7E","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/HTML/1.HTML\u6807\u7B7E.md"}',p={},o=t("",4),c=[o];function l(e,u,k,g,i,d){return s(),a("div",null,c)}var _=n(p,[["render",l]]);export{h as __pageData,_ as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./app.a0f52c8e.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/Git/gitignore\u6587\u4EF6.md"}',a={};function o(i,n,c,s,_,p){return r(),t("div")}var g=e(a,[["render",o]]);export{f as __pageData,g as default};

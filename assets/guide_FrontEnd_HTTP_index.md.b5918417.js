@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,a as t}from"./app.a0f52c8e.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/HTTP/index.md"}',n={},r=t("p",null,[t("a",{href:"./0.http.html"},"0.http")],-1),s=[r];function c(d,_,i,p,l,h){return o(),a("div",null,s)}var u=e(n,[["render",c]]);export{m as __pageData,u as default};

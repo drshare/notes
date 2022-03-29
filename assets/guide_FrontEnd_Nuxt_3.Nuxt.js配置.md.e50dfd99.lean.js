@@ -1,0 +1,1 @@
+import{_ as t,c as d,o as e,d as r}from"./app.a0f52c8e.js";const h='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/Nuxt/3.Nuxt.js\u914D\u7F6E.md"}',o={},n=r("",2),c=[n];function s(a,u,_,i,l,m){return e(),d("div",null,c)}var p=t(o,[["render",s]]);export{h as __pageData,p as default};
