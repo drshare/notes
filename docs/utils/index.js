@@ -110,7 +110,7 @@ function writeCatalogue(target, level = 1, currentLevel = 1) {
         if (['README', 'readme', 'index'].includes(current.name)) {
             fs.removeSync(current.path);
         }
-        if (current.type === 'file' && !['index', 'README', 'readme'].includes(current.name)) {
+        if (current.name && current.type === 'file' && !['index', 'README', 'readme'].includes(current.name)) {
             total.push({
                 deepLevel,
                 name: `${current.name}`,
