@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a,d as r}from"./app.a0f52c8e.js";const u='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/Git/Github/index.md"}',o={},_=r("",1),i=[_];function h(n,c,s,d,p,l){return a(),e("div",null,i)}var b=t(o,[["render",h]]);export{u as __pageData,b as default};

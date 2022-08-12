@@ -1,0 +1,1 @@
+import{_ as t,c as a,o,a as e}from"./app.a0f52c8e.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/NodeJS/KOA/index.md"}',r={},s=e("p",null,[e("a",{href:"./0.KOA\u57FA\u7840.html"},"0.KOA\u57FA\u7840")],-1),n=[s];function c(d,_,i,l,p,f){return o(),a("div",null,n)}var u=t(r,[["render",c]]);export{m as __pageData,u as default};

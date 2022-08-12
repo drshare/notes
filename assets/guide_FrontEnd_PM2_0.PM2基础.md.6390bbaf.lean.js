@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,d as o}from"./app.a0f52c8e.js";const u='{"title":"1.\u4EC0\u4E48\u662Fpm2\uFF1F","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/PM2/0.PM2\u57FA\u7840.md"}',_={},r=o("",8),c=[r];function d(p,n,s,i,h,l){return t(),a("div",null,c)}var P=e(_,[["render",d]]);export{u as __pageData,P as default};

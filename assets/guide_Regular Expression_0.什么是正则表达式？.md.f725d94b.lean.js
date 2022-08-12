@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as _}from"./app.a0f52c8e.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/BackEnd/Nest/2.Providers.md"}',r={};function a(o,s,c,n,d,i){return _(),t("div")}var l=e(r,[["render",a]]);export{f as __pageData,l as default};

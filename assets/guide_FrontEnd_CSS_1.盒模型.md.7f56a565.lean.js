@@ -1,0 +1,1 @@
+import{_ as t,c as d,o as e,d as r}from"./app.a0f52c8e.js";const S='{"title":"CSS\u76D2\u6A21\u578B","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/CSS/1.\u76D2\u6A21\u578B.md"}',a={},o=r("",6),_=[o];function n(s,i,c,h,p,b){return e(),d("div",null,_)}var m=t(a,[["render",n]]);export{S as __pageData,m as default};

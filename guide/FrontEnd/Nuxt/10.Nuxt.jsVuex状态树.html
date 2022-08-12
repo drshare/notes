@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vuex 状态树 | 笔记本</title>
+    <meta name="description" content="描述">
+    <link rel="stylesheet" href="/notes/assets/style.c3210e46.css">
+    <link rel="modulepreload" href="/notes/assets/app.a0f52c8e.js">
+    <link rel="modulepreload" href="/notes/assets/guide_FrontEnd_Nuxt_10.Nuxt.jsVuex状态树.md.32058fa5.lean.js">
+    
+    <link rel="icon" href="/logo.png">
+  <meta name="twitter:title" content="Vuex 状态树 | 笔记本">
+  <meta property="og:title" content="Vuex 状态树 | 笔记本">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/notes/" aria-label="笔记本, back to home" data-v-675d8756 data-v-cc01ef16><img class="logo" src="/notes/logo.png" alt="Logo" data-v-cc01ef16> 笔记本</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><nav class="nav-links" data-v-675d8756 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/HTML/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>HTML</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/CSS/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CSS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/JavaScript/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>JS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/TypeScript/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>TS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端框架</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/Vue/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/React/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>React</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item active" href="/notes/guide/FrontEnd/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/Webpack/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Webpack</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>NODEJS</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/package/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>包管理</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/CLI/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CLI</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/BackEnd/" data-v-b8818f8c>后端 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/Git/" data-v-b8818f8c>Git <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/Programming Paradigm/" data-v-b8818f8c>编程方式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/About/" data-v-b8818f8c>关于 <!----></a></div></div><!--]--><!----><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/drshare/notes" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>GitHub <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-83e92a68><nav class="nav-links nav" data-v-83e92a68 data-v-eab3edfe><!--[--><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/" data-v-b8818f8c>首页 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/HTML/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>HTML</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/CSS/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CSS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/JavaScript/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>JS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/TypeScript/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>TS</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>前端框架</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/Vue/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Vue</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/React/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>React</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item active" href="/notes/guide/FrontEnd/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/Webpack/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Webpack</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/FrontEnd/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-dropdown-link" data-v-eab3edfe data-v-56bf3a3f><button class="button" data-v-56bf3a3f><span class="button-text" data-v-56bf3a3f>NODEJS</span><span class="right button-arrow" data-v-56bf3a3f></span></button><ul class="dialog" data-v-56bf3a3f><!--[--><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/package/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>包管理</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/CLI/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>CLI</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/Nuxt/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>Nuxt</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><li class="dialog-item" data-v-56bf3a3f><div class="nav-dropdown-link-item" data-v-56bf3a3f data-v-bbc27490><a class="item" href="/notes/guide/NodeJS/QianKun/" data-v-bbc27490><span class="arrow" data-v-bbc27490></span><span class="text" data-v-bbc27490>QianKun</span><span class="icon" data-v-bbc27490><!----></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/BackEnd/" data-v-b8818f8c>后端 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/Git/" data-v-b8818f8c>Git <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/Programming Paradigm/" data-v-b8818f8c>编程方式 <!----></a></div></div><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item" href="/notes/guide/About/" data-v-b8818f8c>关于 <!----></a></div></div><!--]--><!----><div class="item" data-v-eab3edfe><div class="nav-link" data-v-eab3edfe data-v-b8818f8c><a class="item isExternal" href="https://github.com/drshare/notes" target="_blank" rel="noopener noreferrer" data-v-b8818f8c>GitHub <svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-b8818f8c><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div></nav><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="#使用状态树">使用状态树</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#普通方式">普通方式</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#模块文件">模块文件</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#插件">插件</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#fetch-方法">fetch 方法</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#nuxtserverinit-方法">nuxtServerInit 方法</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#vuex-严格模式">Vuex 严格模式</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#module-mode">Module Mode</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#经典模式">经典模式</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h1 id="vuex-状态树" tabindex="-1">Vuex 状态树 <a class="header-anchor" href="#vuex-状态树" aria-hidden="true">#</a></h1><blockquote><p>对于每个大项目来说，使用状态树 (store) 管理状态 (state) 十分有必要。这就是为什么 Nuxt.js 内核实现了 <a href="https://github.com/vuejs/vuex" target="_blank" rel="noopener noreferrer">Vuex</a>。</p></blockquote><h2 id="使用状态树" tabindex="-1">使用状态树 <a class="header-anchor" href="#使用状态树" aria-hidden="true">#</a></h2><p>Nuxt.js 会尝试找到src目录（默认是应用根目录）下的 <code>store</code> 目录，如果该目录存在，它将做以下的事情：</p><ol><li>引用 <code>vuex</code> 模块</li><li>将 <code>vuex</code> 模块 加到 vendors 构建配置中去</li><li>设置 <code>Vue</code> 根实例的 <code>store</code> 配置项</li></ol><p>Nuxt.js 支持两种使用 <code>store</code> 的方式，你可以择一使用：</p><ul><li><strong>模块方式：</strong> <code>store</code> 目录下的每个 <code>.js</code> 文件会被转换成为状态树<a href="http://vuex.vuejs.org/en/modules.html" target="_blank" rel="noopener noreferrer">指定命名的子模块</a> （当然，<code>index</code> 是根模块）</li><li><strong>Classic(不建议使用)：</strong> <code>store/index.js</code>返回创建Vuex.Store实例的方法。</li></ul><p>无论使用那种模式，您的<code>state</code>的值应该<strong>始终是</strong><code>function</code>，为了避免返回引用类型，会导致多个实例相互影响。</p><h3 id="普通方式" tabindex="-1">普通方式 <a class="header-anchor" href="#普通方式" aria-hidden="true">#</a></h3><blockquote><p>Nuxt.js允许您拥有一个 <code>store</code> 目录，其中包含与模块对应的每个文件。</p></blockquote><p>首先，只需将状态导出为 <em>函数</em>，将变量和操作作为 <code>store/index.js</code> 中的对象导出：</p><div class="language-"><pre><code>export const state = () =&gt; ({
+  counter: 0
+})
+
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
+}
+</code></pre></div><p>然后，您可以拥有 <code>store/todos.js</code> 文件：</p><div class="language-"><pre><code>export const state = () =&gt; ({
+  list: []
+})
+
+export const mutations = {
+  add (state, text) {
+    state.list.push({
+      text,
+      done: false
+    })
+  },
+  remove (state, { todo }) {
+    state.list.splice(state.list.indexOf(todo), 1)
+  },
+  toggle (state, todo) {
+    todo.done = !todo.done
+  }
+}
+</code></pre></div><p>Vuex将如下创建：</p><div class="language-"><pre><code>new Vuex.Store({
+  state: () =&gt; ({
+    counter: 0
+  }),
+  mutations: {
+    increment (state) {
+      state.counter++
+    }
+  },
+  modules: {
+    todos: {
+      namespaced: true,
+      state: () =&gt; ({
+        list: []
+      }),
+      mutations: {
+        add (state, { text }) {
+          state.list.push({
+            text,
+            done: false
+          })
+        },
+        remove (state, { todo }) {
+          state.list.splice(state.list.indexOf(todo), 1)
+        },
+        toggle (state, { todo }) {
+          todo.done = !todo.done
+        }
+      }
+    }
+  }
+})
+</code></pre></div><p>在您的 <code>pages/todos.vue</code> 中，使用 <code>todos</code> 模块：</p><div class="language-"><pre><code>&lt;template&gt;
+  &lt;ul&gt;
+    &lt;li v-for=&quot;todo in todos&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; :checked=&quot;todo.done&quot; @change=&quot;toggle(todo)&quot;&gt;
+      &lt;span :class=&quot;{ done: todo.done }&quot;&gt;{{ todo.text }}&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;input placeholder=&quot;What needs to be done?&quot; @keyup.enter=&quot;addTodo&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { mapMutations } from &#39;vuex&#39;
+
+export default {
+  computed: {
+    todos () {
+      return this.$store.state.todos.list
+    }
+  },
+  methods: {
+    addTodo (e) {
+      this.$store.commit(&#39;todos/add&#39;, e.target.value)
+      e.target.value = &#39;&#39;
+    },
+    ...mapMutations({
+      toggle: &#39;todos/toggle&#39;
+    })
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.done {
+  text-decoration: line-through;
+}
+&lt;/style&gt;
+</code></pre></div><blockquote><p>模块方法也适用于顶级定义，而无需在 <code>store</code> 目录中实现子目录</p></blockquote><p>示例：您创建文件 <code>store/state.js</code> 并添加以下内容</p><div class="language-"><pre><code>export default () =&gt; ({
+  counter: 0
+})
+</code></pre></div><p>相应的可以在文件夹中添加 <code>store/mutations.js</code></p><div class="language-"><pre><code>export default {
+  increment (state) {
+    state.counter++
+  }
+}
+</code></pre></div><h3 id="模块文件" tabindex="-1">模块文件 <a class="header-anchor" href="#模块文件" aria-hidden="true">#</a></h3><p>您可以将模块文件分解为单独的文件：<code>state.js</code>,<code>actions.js</code>,<code>mutations.js</code>和<code>getters.js</code>。如果您使用<code>index.js</code>来维护<code>state</code>,<code>getters</code>,<code>actions</code>和<code>mutations</code>，同时具有单个单独的操作文件，那么仍然可以正确识别该文件。</p><blockquote><p>注意：在使用拆分文件模块时，必须记住使用<strong>箭头函数功能</strong>， <code>this</code> 在词法上可用。词法范围<code>this</code>意味着它总是指向引用<strong>箭头函数</strong>的所有者。如果未包含<strong>箭头函数</strong>，那么<code>this</code>将是未定义的(<code>undefined</code>)。解决方案是使用 &quot;normal&quot; 功能，该功能会将<code>this</code>指向自己的作用域，因此可以使用。</p></blockquote><h3 id="插件" tabindex="-1">插件 <a class="header-anchor" href="#插件" aria-hidden="true">#</a></h3><p>您可以将其他插件添加到store（在模块模式下），将其放入<code>store/index.js</code>文件中：</p><div class="language-"><pre><code>import myPlugin from &#39;myPlugin&#39;
+
+export const plugins = [ myPlugin ]
+
+export const state = () =&gt; ({
+  counter: 0
+})
+
+export const mutations = {
+  increment (state) {
+    state.counter++
+  }
+}
+</code></pre></div><p>有关插件的更多信息: <a href="https://vuex.vuejs.org/en/plugins.html" target="_blank" rel="noopener noreferrer">Vuex 文档</a>.</p><h2 id="fetch-方法" tabindex="-1">fetch 方法 <a class="header-anchor" href="#fetch-方法" aria-hidden="true">#</a></h2><blockquote><p>fetch 方法会在渲染页面前被调用，作用是填充状态树 (store) 数据，与 asyncData 方法类似，不同的是它不会设置组件的数据。</p></blockquote><p>关于 <code>fetch</code> 方法的更多信息，请参考 <a href="https://www.nuxtjs.cn/api/pages-fetch" target="_blank" rel="noopener noreferrer">页面 fetch 方法API</a>。</p><h2 id="nuxtserverinit-方法" tabindex="-1">nuxtServerInit 方法 <a class="header-anchor" href="#nuxtserverinit-方法" aria-hidden="true">#</a></h2><p>如果在状态树中指定了 <code>nuxtServerInit</code> 方法，Nuxt.js 调用它的时候会将页面的上下文对象作为第2个参数传给它（服务端调用时才会酱紫哟）。当我们想将服务端的一些数据传到客户端时，这个方法是灰常好用的。</p><p>举个例子，假设我们服务端的会话状态树里可以通过 <code>req.session.user</code> 来访问当前登录的用户。将该登录用户信息传给客户端的状态树，我们只需更新 <code>store/index.js</code> 如下：</p><div class="language-"><pre><code>actions: {
+  nuxtServerInit ({ commit }, { req }) {
+    if (req.session.user) {
+      commit(&#39;user&#39;, req.session.user)
+    }
+  }
+}
+</code></pre></div><blockquote><p>如果你使用_状态树模块化_的模式，只有主模块（即 <code>store/index.js</code>）适用设置该方法（其他模块设置了也不会被调用）。</p></blockquote><p>这时<a href="https://www.nuxtjs.cn/api/context" target="_blank" rel="noopener noreferrer">context</a>被赋予<code>nuxtServerInit</code>作为第二个参数，它与<code>asyncData</code>或<code>fetch</code>方法相同。</p><p><code>nuxtServerInit</code> 方法接收的上下文对象和 <code>fetch</code> 的一样，但不包括 <code>context.redirect()</code> 和 <code>context.error()</code>。</p><blockquote><p>注意：异步<code>nuxtServerInit</code>操作必须返回Promise来通知<code>nuxt</code>服务器等待它们。</p></blockquote><div class="language-"><pre><code>actions: {
+  async nuxtServerInit({ dispatch }) {
+    await dispatch(&#39;core/load&#39;)
+  }
+}
+</code></pre></div><h2 id="vuex-严格模式" tabindex="-1">Vuex 严格模式 <a class="header-anchor" href="#vuex-严格模式" aria-hidden="true">#</a></h2><p>默认情况下，在开发模式下启用严格模式，在生产模式下关闭模式。要在dev中禁用严格模式，请遵循以下示例。</p><h3 id="module-mode" tabindex="-1">Module Mode <a class="header-anchor" href="#module-mode" aria-hidden="true">#</a></h3><div class="language-"><pre><code>export const strict = false
+</code></pre></div><h3 id="经典模式" tabindex="-1">经典模式 <a class="header-anchor" href="#经典模式" aria-hidden="true">#</a></h3><blockquote><p>此功能已经弃用，将在Nuxt 3中删除。</p></blockquote><p>要使用经典模式创建Vuex，我们应该创建<code>store/index.js</code>到处返回Vuex实例的方法的文件：</p><div class="language-"><pre><code>import Vuex from &#39;vuex&#39;
+
+const createStore = () =&gt; {
+  return new Vuex.Store({
+    strict: false,
+    state: () =&gt; ({
+      counter: 0
+    }),
+    mutations: {
+      increment (state) {
+        state.counter++
+      }
+    }
+  })
+}
+
+export default createStore
+</code></pre></div><blockquote><p>我们不需要安装，因为Vuex由Nuxt.js提供。</p></blockquote><p>我们现在可以在我们的组件中使用<code>this.$store</code>：</p><div class="language-"><pre><code>&lt;template&gt;
+  &lt;button @click=&quot;$store.commit(&#39;increment&#39;)&quot;&gt;{{ $store.state.counter }}&lt;/button&gt;
+&lt;/template&gt;
+</code></pre></div></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-07c132fc><div class="edit" data-v-07c132fc><div class="edit-link" data-v-07c132fc data-v-1ed99556><a class="link" href="https://github.com/drshare/notes/edit/master/docs/guide/FrontEnd/Nuxt/10.Nuxt.jsVuex状态树.md" target="_blank" rel="noopener noreferrer" data-v-1ed99556>欢迎帮助我们改善页面! <svg class="icon outbound icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-1ed99556><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div></div><div class="updated" data-v-07c132fc><!----></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"guide_backend_nest_1.controller.md\":\"bffec70c\",\"guide_backend_nest_2.providers.md\":\"9c860a43\",\"guide_backend_nest_index.md\":\"0648aae6\",\"guide_backend_rust_0.rust介绍.md\":\"8af99e82\",\"guide_backend_rust_1.安装.md\":\"203f8d16\",\"guide_backend_rust_2.cargo.md\":\"fe39b1e7\",\"guide_backend_rust_3.数据类型.md\":\"44f376f6\",\"guide_backend_rust_4.变量与可变性.md\":\"29fe5ef8\",\"guide_backend_rust_index.md\":\"105383e8\",\"guide_experience_codestrong.md\":\"001be447\",\"guide_frontend_css_0.css是什么？.md\":\"454c95cd\",\"guide_frontend_css_1.盒模型.md\":\"7f56a565\",\"guide_frontend_css_css常用场景_响应式布局.md\":\"a8cb8ea9\",\"guide_frontend_css_css常用场景_手机端适配.md\":\"c38b6454\",\"guide_frontend_css_css常用场景_水平垂直居中.md\":\"3bb33056\",\"guide_frontend_css_css常用场景_网站黑白主题.md\":\"c6d3bd14\",\"guide_frontend_css_sass_sass和node-sass有什么区别.md\":\"9190c7e2\",\"guide_frontend_css_index.md\":\"e4c25b54\",\"guide_frontend_datavisualization_antvg2_1.图标的组成.md\":\"d5f0b965\",\"guide_frontend_datavisualization_index.md\":\"58698c7b\",\"guide_frontend_elementui_1.目录结构.md\":\"6ab3a5c7\",\"guide_frontend_elementui_index.md\":\"dd747ecf\",\"guide_frontend_html_0.html是什么.md\":\"1f9bea5f\",\"guide_frontend_html_1.html标签.md\":\"845be3f5\",\"guide_frontend_html_canvas_0.canvas.md\":\"b5688b4f\",\"guide_frontend_html_html5新增标签.md\":\"c7d020f2\",\"guide_frontend_html_index.md\":\"ca724368\",\"guide_frontend_http_0.http.md\":\"255e040c\",\"guide_frontend_http_index.md\":\"b5918417\",\"guide_frontend_javascript_0-javascript.md\":\"28bec9c3\",\"guide_frontend_javascript_1-语言基础.md\":\"36014a05\",\"guide_frontend_javascript_2-变量.md\":\"857fe757\",\"guide_frontend_javascript_3-数据类型.md\":\"dd5063a1\",\"guide_frontend_javascript_4-迭代器与生成器.md\":\"fc64fa4c\",\"guide_frontend_javascript_5-对象类面向对象.md\":\"247a7a06\",\"guide_frontend_javascript_es6_0.let-const.md\":\"64194134\",\"guide_frontend_javascript_es6_map.md\":\"8d717b90\",\"guide_frontend_javascript_es6_promise.md\":\"1b102c98\",\"guide_frontend_javascript_es6_set.md\":\"00dda735\",\"guide_frontend_javascript_es6解构.md\":\"c0ef7177\",\"guide_frontend_javascript_eventloop.md\":\"e6c3080c\",\"guide_frontend_javascript_js代码执行流程.md\":\"d439769b\",\"guide_frontend_javascript_js数据存储位置.md\":\"afb6ad9a\",\"guide_frontend_javascript_bindcallapply.md\":\"75082a54\",\"guide_frontend_javascript_index.md\":\"136665ff\",\"guide_frontend_javascript_函数-function.md\":\"0be116b3\",\"guide_frontend_javascript_常用技巧.md\":\"2dfc91fa\",\"guide_frontend_javascript_异步处理_0.什么是异步？.md\":\"3381c8a3\",\"guide_frontend_javascript_异步处理_1.promise.md\":\"3ea6de11\",\"guide_frontend_javascript_线程.md\":\"be6854a5\",\"guide_frontend_javascript_防抖节流.md\":\"933dd204\",\"guide_frontend_nginx_0.nginx.md\":\"01c65fb0\",\"guide_frontend_nginx_index.md\":\"56aa3b22\",\"guide_frontend_nuxt_0.基础.md\":\"e9aac50e\",\"guide_frontend_nuxt_1.什么是nuxt.md\":\"1b1c5015\",\"guide_frontend_nuxt_10.nuxt.jsvuex状态树.md\":\"32058fa5\",\"guide_frontend_nuxt_11.nuxt.js对ts的支持.md\":\"a3cbf2f1\",\"guide_frontend_nuxt_2.nuxt目录结构.md\":\"0c311ef3\",\"guide_frontend_nuxt_3.nuxt.js配置.md\":\"e50dfd99\",\"guide_frontend_nuxt_4.nuxt.js路由.md\":\"c72a6f29\",\"guide_frontend_nuxt_5.nuxt.js视图.md\":\"e264e5d3\",\"guide_frontend_nuxt_6.nuxt.js异步数据.md\":\"d7193c77\",\"guide_frontend_nuxt_7.nuxt.js资源文件.md\":\"9455457c\",\"guide_frontend_nuxt_8.nuxt.js插件.md\":\"1746b6e1\",\"guide_frontend_nuxt_9.nuxt.js模块.md\":\"224bcd25\",\"guide_frontend_nuxt_index.md\":\"33e90427\",\"guide_frontend_nuxt_项目搭建过程.md\":\"6e2df574\",\"guide_frontend_pm2_0.pm2基础.md\":\"6390bbaf\",\"guide_frontend_pm2_1.安装.md\":\"9b96810c\",\"guide_frontend_pm2_2.启动一个应用.md\":\"54d72d47\",\"guide_frontend_pm2_3.pm2命令.md\":\"0a61463e\",\"guide_frontend_pm2_index.md\":\"3e5f1dd8\",\"guide_frontend_project_1.nuxt项目.md\":\"5a9eb653\",\"guide_frontend_project_2.vue3.0项目.md\":\"82fad3d0\",\"guide_frontend_project_3.vuepress项目.md\":\"0e3a47bb\",\"guide_frontend_project_4.qiankun微服务.md\":\"c94d81c3\",\"guide_frontend_project_pwa.md\":\"badb44ce\",\"guide_frontend_project_index.md\":\"b6b49b09\",\"guide_frontend_qiankun_1.什么是乾坤.md\":\"194765e2\",\"guide_frontend_qiankun_2.快速上手.md\":\"add3fc46\",\"guide_frontend_qiankun_3.qiankun api.md\":\"fe857ece\",\"guide_frontend_qiankun_index.md\":\"961173d5\",\"guide_frontend_typescript_1.简介.md\":\"576a3119\",\"guide_frontend_typescript_10..类型兼容性.md\":\"fc304ec7\",\"guide_frontend_typescript_11.高级类型.md\":\"9a672677\",\"guide_frontend_typescript_12.sysmbols.md\":\"8a287572\",\"guide_frontend_typescript_13.迭代器和生成器.md\":\"ac869d3b\",\"guide_frontend_typescript_14.模块.md\":\"51bb7a31\",\"guide_frontend_typescript_2.基本数据类型.md\":\"c5f5483b\",\"guide_frontend_typescript_3.变量声明.md\":\"c54d3236\",\"guide_frontend_typescript_4.接口.md\":\"1fddad2b\",\"guide_frontend_typescript_5.类.md\":\"453ac384\",\"guide_frontend_typescript_6.函数.md\":\"95ca948d\",\"guide_frontend_typescript_7.泛型.md\":\"1b69ba4e\",\"guide_frontend_typescript_8.枚举.md\":\"db97600d\",\"guide_frontend_typescript_9.类型推论.md\":\"81c0f106\",\"guide_frontend_typescript_index.md\":\"aa9eb1dc\",\"guide_frontend_typescript_学习文档.md\":\"0105a3d4\",\"guide_frontend_uni-app_1.什么是uni-app？.md\":\"5fcd6cb9\",\"guide_frontend_uni-app_index.md\":\"2cd54b55\",\"guide_frontend_webpack_chunk.md\":\"1b58d46f\",\"guide_frontend_webpack_index.md\":\"282745d4\",\"guide_frontend_vue3_1.前端框架.md\":\"425b168d\",\"guide_frontend_vue3_2.vue项目创建.md\":\"e23b6f1a\",\"guide_frontend_vue3_3.componsitionapi.md\":\"84af7012\",\"guide_frontend_vue3_index.md\":\"3363b299\",\"guide_frontend_vue3_vue-router_原理.md\":\"8c2a9275\",\"guide_frontend_浏览器_index.md\":\"b208ddbe\",\"guide_frontend_浏览器_浏览器兼容.md\":\"2e1c08ab\",\"guide_frontend_浏览器_浏览器缓存.md\":\"5127ecd0\",\"guide_git_github_githubaction_how.md\":\"ca9d9b43\",\"guide_git_github_githubaction_what.md\":\"5cadcfee\",\"guide_git_github_github访问加速.md\":\"7f467e3f\",\"guide_git_github_readme.en.md\":\"96a5be4b\",\"guide_git_github_index.md\":\"9a683992\",\"guide_git_github_repos.md\":\"524d2547\",\"guide_git_gitignore文件.md\":\"3c7b8d18\",\"guide_git_git命令.md\":\"f9195947\",\"guide_nodejs_koa_0.koa基础.md\":\"bb86447d\",\"guide_nodejs_koa_index.md\":\"7feba471\",\"guide_nodejs_package_1.npx.md\":\"c2f574d7\",\"guide_nodejs_package_index.md\":\"34371877\",\"guide_nodejs_package_nvm控制node版本.md\":\"5b5ef7e4\",\"guide_nodejs_package_yarn和npm使用国内源.md\":\"171cba50\",\"guide_nodejs_package_包管理工具.md\":\"0db6561b\",\"guide_nodejs_module_index.md\":\"79541149\",\"guide_nodejs_module_模块化讲解.md\":\"5d20cba4\",\"guide_programming paradigm_functional programming_0.什么是函数式编程？.md\":\"21be35df\",\"guide_programming paradigm_functional programming_1.函数是一等公民.md\":\"c8eb644b\",\"guide_programming paradigm_functional programming_2.高阶函数.md\":\"8a5633c7\",\"guide_programming paradigm_functional programming_3.闭包.md\":\"f3e6fe1d\",\"guide_programming paradigm_functional programming_4.纯函数.md\":\"40d4a056\",\"guide_programming paradigm_functional programming_index.md\":\"381ce30f\",\"guide_programming paradigm_object oriented programming_0.what is.md\":\"78deab67\",\"guide_programming paradigm_object oriented programming_index.md\":\"b0017e43\",\"guide_regular expression_0.什么是正则表达式？.md\":\"f725d94b\",\"guide_物联网_wifi模块_wifi模块.md\":\"389b6893\",\"guide_物联网_wifi模块_index.md\":\"f5d77821\",\"guide_读书笔记_vue.js设计与实现_0.写在前面_0.目录.md\":\"0b290f74\",\"guide_读书笔记_vue.js设计与实现_1.框架设计概念_0.命令式or声明式.md\":\"229bb7eb\",\"guide_读书笔记_vue.js设计与实现_2.响应式系统_0.响应式系统的作用.md\":\"ebff2865\",\"guide_读书笔记_vue.js设计与实现_index.md\":\"bb5de05c\",\"guide_读书笔记_大话数据结构_0.数据结构是什么？.md\":\"e31fcf47\",\"guide_读书笔记_大话数据结构_1.数据.md\":\"4e89a7db\",\"guide_读书笔记_大话数据结构_2.数据之间的关系.md\":\"1bbf4fec\",\"guide_读书笔记_大话数据结构_index.md\":\"ef4b4ce9\",\"index.md\":\"32494d84\"}")</script>
+    <script type="module" async src="/notes/assets/app.a0f52c8e.js"></script>
+    
+  </body>
+</html>

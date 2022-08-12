@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a,d as r}from"./app.a0f52c8e.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/BackEnd/Rust/index.md"}',_={},o=r("",1),s=[o];function c(n,d,h,i,l,f){return a(),e("div",null,s)}var u=t(_,[["render",c]]);export{m as __pageData,u as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as e,d as a}from"./app.a0f52c8e.js";const g='{"title":"PM2\u547D\u4EE4","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/PM2/3.PM2\u547D\u4EE4.md"}',p={},t=a("",4),o=[t];function l(m,r,i,c,d,_){return e(),n("div",null,o)}var f=s(p,[["render",l]]);export{g as __pageData,f as default};

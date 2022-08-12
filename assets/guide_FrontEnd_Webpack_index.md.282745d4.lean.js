@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as n,a as e}from"./app.a0f52c8e.js";const f='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/FrontEnd/Webpack/index.md"}',o={},r=e("p",null,[e("a",{href:"./Chunk.html"},"Chunk")],-1),s=[r];function c(d,_,i,p,l,h){return n(),a("div",null,s)}var m=t(o,[["render",c]]);export{f as __pageData,m as default};

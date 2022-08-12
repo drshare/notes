@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as t,d as r}from"./app.a0f52c8e.js";const p='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/Programming Paradigm/Functional Programming/index.md"}',_={},o=r("",1),n=[o];function c(i,s,d,m,h,l){return t(),e("div",null,n)}var g=a(_,[["render",c]]);export{p as __pageData,g as default};
